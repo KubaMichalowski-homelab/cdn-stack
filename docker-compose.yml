@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     volumes:
       - /opt/docker/cdn:/data:ro
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./nginx/00-global.conf:/etc/nginx/conf.d/00-global.conf:ro
     networks:
       - internal
