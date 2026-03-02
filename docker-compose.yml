@@ -10,7 +10,7 @@ services:
     networks:
       - internal
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO http://localhost"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 3
