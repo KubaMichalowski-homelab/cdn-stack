@@ -11,7 +11,9 @@ services:
       - ./nginx/00-global.conf:/etc/nginx/conf.d/00-global.conf:ro
     networks:
       - internal
-    healthcheck: ["CMD", "wget", "-qO-", "http://localhost"]
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO http://localhost"]
+      internal: 30s
 
   tunnel:
     image: cloudflare/cloudflared:2026.2.0
