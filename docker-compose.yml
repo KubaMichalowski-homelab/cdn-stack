@@ -11,7 +11,7 @@ services:
       - internal
 
   tunnel:
-    image: cloudflare/cloudflared:2026.2.0
+    image: cloudflare/cloudflared:2026.3.0
     container_name: tunnel
     restart: unless-stopped
     command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
